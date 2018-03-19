@@ -7,8 +7,7 @@ public class User {
     protected String email;
     protected String id;
     protected String name;
-    protected String passwordAsString;
-    protected Password passwordAsPassword;
+    protected Password password;
 
     public User() {
     }
@@ -17,14 +16,14 @@ public class User {
         this.email = email;
         this.id = id;
         this.name = name;
-        this.passwordAsPassword = password;
+        this.password = password;
     }
 
-    public User(String email, String id, String name, String password) {
+    public User(String email, String id, String name, String passwordAsString) {
         this.email = email;
         this.id = id;
         this.name = name;
-        this.passwordAsString = password;
+        this.password = new Password(passwordAsString);
     }
 
     @Override

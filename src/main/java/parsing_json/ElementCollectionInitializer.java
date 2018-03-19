@@ -5,14 +5,14 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.stream.JsonReader;
 import org.apache.commons.io.IOUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class ElementCollectionInitializer {
@@ -44,7 +44,7 @@ public class ElementCollectionInitializer {
         return result;
     }
 
-    public List<Element> convertJsonToArrayList(String jsonString) {
+    public List<Element> convertJsonStringToArrayList(String jsonString) {
         Gson gson = new Gson();
         Type collectionType = new TypeToken<List<Element>>() {}.getType();
         List<Element> elements = gson.fromJson(jsonString, collectionType);
@@ -54,11 +54,10 @@ public class ElementCollectionInitializer {
     public static void main(String[] args) throws Exception {
 
         ElementCollectionInitializer eci = new ElementCollectionInitializer();
-//        eci.testOnly();
-
         String periodic_table = eci.readRawDataToString();
-//        System.out.println(periodic_table);
-        List<Element> elements = eci.convertJsonToArrayList(periodic_table);
+        List<Element> elements1 = eci.convertJsonStringToArrayList(periodic_table);
+        System.out.println(Arrays.toString(elements1.toArray()));
+        System.out.println(elements1.get(0).getShells().get(0));
 
 
     }

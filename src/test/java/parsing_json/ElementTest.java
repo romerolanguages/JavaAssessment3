@@ -39,9 +39,7 @@ public class ElementTest {
     }
 
     @Test
-    public void getName() {
-        assertEquals("Hydrogen", element.getName());
-    }
+    public void getName() { assertEquals("Hydrogen", element.getName()); }
 
     @Test
     public void getAppearance() {

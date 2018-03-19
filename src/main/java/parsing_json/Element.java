@@ -27,7 +27,6 @@ public class Element {
     private ArrayList<Integer> shells;
 
     public Element() {
-
     }
 
     public Element(String name, String appearance, double atomic_mass, double boil, String category, String color,
@@ -57,7 +56,89 @@ public class Element {
         this.shells = shells;
     }
 
-    
+    public String getName() {
+        return name;
+    }
+
+    public String getAppearance() {
+        return appearance;
+    }
+
+    public double getAtomic_mass() {
+        return atomic_mass;
+    }
+
+    public double getBoil() {
+        return boil;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public double getDensity() {
+        return density;
+    }
+
+    public String getDiscovered_by() {
+        return discovered_by;
+    }
+
+    public double getMelt() {
+        return melt;
+    }
+
+    public double getMolar_heat() {
+        return molar_heat;
+    }
+
+    public String getNamed_by() {
+        return named_by;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public int getPeriod() {
+        return period;
+    }
+
+    public String getPhase() {
+        return phase;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public String getSpectral_img() {
+        return spectral_img;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public int getXpos() {
+        return xpos;
+    }
+
+    public int getYpos() {
+        return ypos;
+    }
+
+    public ArrayList<Integer> getShells() {
+        return shells;
+    }
 
 
 }

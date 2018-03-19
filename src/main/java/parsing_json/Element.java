@@ -1,30 +1,31 @@
 package parsing_json;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class Element {
 
-    private String name;
-    private String appearance;
-    private double atomic_mass;
-    private double boil;
-    private String category;
-    private String color;
-    private double density;
-    private String discovered_by;
-    private double melt;
-    private double molar_heat;
-    private String named_by;
-    private int number;
-    private int period;
-    private String phase;
-    private String source;
-    private String spectral_img;
-    private String summary;
-    private String symbol;
-    private int xpos;
-    private int ypos;
-    private ArrayList<Integer> shells;
+    protected String name;
+    protected String appearance;
+    protected double atomic_mass;
+    protected double boil;
+    protected String category;
+    protected String color;
+    protected double density;
+    protected String discovered_by;
+    protected double melt;
+    protected double molar_heat;
+    protected String named_by;
+    protected int number;
+    protected int period;
+    protected String phase;
+    protected String source;
+    protected String spectral_img;
+    protected String summary;
+    protected String symbol;
+    protected int xpos;
+    protected int ypos;
+    protected ArrayList<Integer> shells;
 
     public Element() {
     }
@@ -140,5 +141,12 @@ public class Element {
         return shells;
     }
 
+    public static void main(String[] args) throws NoSuchFieldException {
+
+        Field field = Element.class.getDeclaredField("name");
+
+        System.out.println(field.toString());
+
+    }
 
 }

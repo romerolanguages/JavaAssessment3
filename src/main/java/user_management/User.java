@@ -26,6 +26,14 @@ public class User {
         this.password = new Password(passwordAsString);
     }
 
+    public void setPassword(Password password) {
+        this.password = password;
+    }
+    
+    public void setPassword(String passwordAsString) {
+        this.password = new Password(passwordAsString);
+    }
+
     @Override
     public String toString() {
         return null;

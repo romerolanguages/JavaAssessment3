@@ -14,17 +14,9 @@ import static org.junit.Assert.*;
 
 public class ElementCollectionInitializerTest {
 
-//    @Test
-//    public void generate() throws IOException {
-//        assertEquals(119, ElementCollectionInitializer.generate().size());
-//    }
-
     @Test
-    public void testOnlyTest() {
-        JsonParser parser = new JsonParser();
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("periodic_table.json");
-        Reader reader = new InputStreamReader(inputStream);
-        JsonElement rootElement = parser.parse(reader);
-        Assert.assertNotNull(rootElement);
+    public void generate() throws Exception {
+        assertEquals(119, ElementCollectionInitializer.generate().size());
     }
+
 }

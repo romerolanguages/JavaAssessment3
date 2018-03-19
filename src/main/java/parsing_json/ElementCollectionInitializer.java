@@ -20,12 +20,16 @@ public class ElementCollectionInitializer {
     public ElementCollectionInitializer() {
     }
 
-    public static ElementCollection generate() {
-        return null;
+    // Removed static to be able to call other methods
+    public static ElementCollection<Element> generate() throws Exception {
+        String periodic_table = readRawDataToString();
+        ElementCollection<Element> elements = convertJsonStringToElementCollection(periodic_table);
+        return elements;
     }
 
-    public String readRawDataToString() throws Exception{
-        ClassLoader classLoader = getClass().getClassLoader();
+    // Changed to "ElementCollection.class" to be able to read from static method
+    public static String readRawDataToString() throws Exception{
+        ClassLoader classLoader = ElementCollection.class.getClassLoader();
         String result = IOUtils.toString(classLoader.getResourceAsStream("periodic_table.json"));
         return result;
     }
@@ -37,7 +41,7 @@ public class ElementCollectionInitializer {
         return elements;
     }
 
-    public ElementCollection<Element> convertJsonStringToElementCollection(String jsonString) {
+    public static ElementCollection<Element> convertJsonStringToElementCollection(String jsonString) {
         Gson gson = new Gson();
         Type collectionType = new TypeToken<ElementCollection<Element>>() {}.getType();
         ElementCollection<Element> elements = gson.fromJson(jsonString, collectionType);

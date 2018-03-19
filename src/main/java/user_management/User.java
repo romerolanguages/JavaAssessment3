@@ -29,14 +29,15 @@ public class User {
     public void setPassword(Password password) {
         this.password = password;
     }
-    
+
     public void setPassword(String passwordAsString) {
         this.password = new Password(passwordAsString);
     }
 
     @Override
     public String toString() {
-        return null;
+        String namePlusEmailFormat = name + " - " + email;
+        return namePlusEmailFormat;
     }
 
     @Override

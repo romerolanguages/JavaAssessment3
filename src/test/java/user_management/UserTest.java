@@ -66,11 +66,11 @@ public class UserTest {
         assertTrue(expected.matches("anotherPassword"));
     }
 
-    @Test
-    public void setPasswordWithString() {
-        user.setPassword("anotherPassword");
-        assertTrue(user.getPassword().matches("anotherPassword"));
-    }
+//    @Test
+//    public void setPasswordWithString() {
+//        user.setPassword("anotherPassword");
+//        assertTrue(user.getPassword().matches("anotherPassword"));
+//    }
 
     @Test
     public void testToString() {

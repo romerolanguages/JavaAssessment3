@@ -54,9 +54,9 @@ public class User {
         this.password = password;
     }
 
-    public void setPassword(String passwordAsString) {
-        this.password = new Password(passwordAsString);
-    }
+//    public void setPassword(String passwordAsString) {
+//        this.password = new Password(passwordAsString);
+//    }
 
     public Password getPassword() {
         return password;
@@ -70,7 +70,10 @@ public class User {
 
     @Override
     public boolean equals(Object obj) {
-        User user = (User) obj;
-        return false;
+        boolean response = false;
+        if (this.equals(obj)) {
+            response = true;
+        }
+        return response;
     }
 }

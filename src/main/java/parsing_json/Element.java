@@ -30,9 +30,34 @@ public class Element {
 
     }
 
-//    public Element() {
-//
-//    }
+    public Element(String name, String appearance, double atomic_mass, double boil, String category, String color,
+                   double density, String discovered_by, double melt, double molar_heat, String named_by, int number,
+                   int period, String phase, String source, String spectral_img, String summary, String symbol,
+                   int xpos, int ypos, ArrayList<Integer> shells) {
+        this.name = name;
+        this.appearance = appearance;
+        this.atomic_mass = atomic_mass;
+        this.boil = boil;
+        this.category = category;
+        this.color = color;
+        this.density = density;
+        this.discovered_by = discovered_by;
+        this.melt = melt;
+        this.molar_heat = molar_heat;
+        this.named_by = named_by;
+        this.number = number;
+        this.period = period;
+        this.phase = phase;
+        this.source = source;
+        this.spectral_img = spectral_img;
+        this.summary = summary;
+        this.symbol = symbol;
+        this.xpos = xpos;
+        this.ypos = ypos;
+        this.shells = shells;
+    }
+
+    
 
 
 }

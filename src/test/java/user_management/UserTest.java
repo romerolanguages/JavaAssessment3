@@ -13,7 +13,7 @@ public class UserTest {
     @Before
     public void setUp() throws Exception {
         password = new Password("password");
-        user = new User(1, "Wilhem", "wilhem@zipcodewilmington.com", password);
+        user = new User("wilhem@zipcodewilmington.com", 1, "Wilhem", password);
     }
 
     @Test

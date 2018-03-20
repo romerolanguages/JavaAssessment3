@@ -2,14 +2,28 @@ package user_management;
 
 import java.util.ArrayList;
 
-public class UserCollection<E> extends ArrayList {
+public class UserCollection<E> extends ArrayList<E> {
 
-    public User findById(int id) {
-        return null;
+    public User findById(int id) throws Exception {
+        User userToReturn = null;
+        for (user_management.User user : UserCollectionInitializer.generate()) {
+            if (id == user.getId()) {
+                userToReturn = (User) user;
+                break;
+            }
+        }
+        return userToReturn;
     }
 
-    public User findByEmail(String email) {
-        return null;
+    public User findByEmail(String email) throws Exception {
+        User userToReturn = null;
+        for (user_management.User user : UserCollectionInitializer.generate()) {
+            if (email.equals(user.getEmail())) {
+                userToReturn = (User) user;
+                break;
+            }
+        }
+        return userToReturn;
     }
 
     public User attemptLogin(String email, String password) {

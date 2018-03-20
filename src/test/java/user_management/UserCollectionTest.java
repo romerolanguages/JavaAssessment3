@@ -1,40 +1,35 @@
-//package user_management;
-//
-//import org.junit.Before;
-//import org.junit.Test;
-//import user_management.security.Password;
-//import user_management.security.UserAuthenticationFailedException;
-//import user_management.validation.EmailNotAvailableException;
-//import user_management.validation.InvalidEmailException;
-//import user_management.validation.PasswordTooSimpleException;
-//
-//import static org.junit.Assert.*;
-//
-//public class UserCollectionTest {
-//    private UserCollection users;
-//
-//    @Before
-//    public void setUp() throws Exception {
-//        users = UserCollectionInitializer.generate();
-//    }
-//
-//    @Test
-//    public void findById() {
-//        User actual = users.findById(1);
-//
-//        User expected = new User(1, "Aprilette Polon", "apolon0@weebly.com", actual.getPassword());
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    public void findByEmail() {
-//        User actual = users.findByEmail("apolon0@weebly.com");
-//
-//        User expected = new User(1, "Aprilette Polon", "apolon0@weebly.com", actual.getPassword());
-//
-//        assertEquals(expected, actual);
-//    }
+package user_management;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class UserCollectionTest {
+    private UserCollection<User> users;
+
+    @Before
+    public void setUp() throws Exception {
+        users = UserCollectionInitializer.generate();
+    }
+
+    @Test
+    public void findById() throws Exception {
+        User actual = users.findById(1);
+
+        User expected = new User("apolon0@weebly.com",1, "Aprilette Polon", actual.getPassword());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void findByEmail() throws Exception {
+        User actual = users.findByEmail("apolon0@weebly.com");
+
+        User expected = new User("apolon0@weebly.com",1, "Aprilette Polon", actual.getPassword());
+
+        assertEquals(expected, actual);
+    }
 //
 //    @Test
 //    public void attemptLogin() throws UserAuthenticationFailedException {
@@ -115,4 +110,4 @@
 //        assertNotNull(users.findById(leonId));
 //        assertNotNull(users.findById(nhuId));
 //    }
-//}
+}

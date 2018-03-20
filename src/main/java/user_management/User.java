@@ -71,7 +71,10 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         boolean response = false;
-        if (this.equals(obj)) {
+        User userObj = (User) obj;
+        if (this.id == userObj.getId()
+                && this.name.equals(userObj.getName())
+                && this.email.equals(userObj.getEmail())) {
             response = true;
         }
         return response;

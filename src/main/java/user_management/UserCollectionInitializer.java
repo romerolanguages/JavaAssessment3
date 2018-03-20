@@ -12,7 +12,7 @@ public class UserCollectionInitializer {
     public UserCollectionInitializer() {
     }
 
-    public static UserCollection generate() throws Exception {
+    public static UserCollection<User> generate() throws Exception {
         String users = readRawDataToString();
         UserCollection<User> userCollection = convertJsonStringToUserCollection(users);
         return userCollection;
